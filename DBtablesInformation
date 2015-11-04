@@ -1,0 +1,18 @@
+create table Users(
+username varchar(50) not null,
+password varchar(20) not null,
+ID int primary key not null,
+phoneNumber varchar(14) not null
+);
+
+create table Violation(
+ID int primary key not null,
+UserID int not null,
+type varchar(20) not null,
+time time not null,
+location_x float not null,
+location_y float not null,
+image blob not null,
+foreign key (UserID) references Users(ID)
+);
+
